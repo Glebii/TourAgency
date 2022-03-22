@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All Posts</title>
+</head>
+<body>
+<div>
+    <h2><a th:href="@{/posts/newPosition/}">Add new position</a></h2>
+    <table border="1">
+        <thead>
+        <tr>
+            <td>Post ID</td>
+            <td>Position</td>
+            <td>Salary</td>
+            <td>Edit</td>
+            <td>Delete</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="post : ${postList}">
+            <td th:text="${post.id}">ID</td>
+            <td th:text="${post.position}">Position</td>
+            <td th:text="${post.salary}">Salary</td>
+            <td><a th:href="@{'/posts/edit/' + ${post.id}}">Edit</a></td>
+            <td><a th:href="@{'/posts/delete/' + ${post.id}}">Delete</a></td>
+
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
