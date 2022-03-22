@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+</head>
+<body>
+<div>
+    <h1>Post edit form</h1>
+    <br/>
+    <form th:object="${post}" th:action="@{/posts/save-post}" th:method="POST">
+        <table border="1">
+            <tr>
+                <td>Post ID</td>
+                <td><input type="number" th:field="*{id}" readonly="readonly"></td>
+            </tr>
+            <tr>
+                <td>Position</td>
+                <td><input type="text" th:field="*{position}"></td>
+            </tr>
+            <tr>
+                <td>Post salary</td>
+                <td><input type="text" th:field="*{salary}"></td>
+            </tr>
+            <tr>
+                <td><button type="submit">Update</button></td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

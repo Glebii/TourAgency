@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Creating Staff</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/staff}" th:object="${newStaff}">
+    <label for="address">Enter address :</label>
+    <input type="text" th:field="${newStaff.address}" id="address">
+    <br/>
+    <label for="name">Enter full name:</label>
+    <input type="text" th:field="${newStaff.fullName}" id="name">
+    <br/>
+    <label for="passport">Enter passport nummer:</label>
+    <input type="text" th:field="${newStaff.passportNummer}" id="passport">
+    <br/>
+    <label for="post_id">Enter post ID:</label>
+    <input type="number" th:field="${newStaff.post}" id="post_id">
+    <br/>
+    <input type="submit" value="Create!"/>
+</form>
+</body>
+</html>
